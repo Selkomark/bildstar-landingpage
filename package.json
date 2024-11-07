@@ -5,7 +5,8 @@
   "scripts": {
     "build:deps:assets:flowbite": "cp -R node_modules/flowbite/dist ./dist/flowbite/",
     "build:deps:assets:jquery": "cp -R ./node_modules/jquery/dist ./dist/jquery/",
-    "build:deps:assets": "npm run build:deps:assets:flowbite && npm run build:deps:assets:jquery",
+    "build:deps:assets:fontawesome": "cp -R ./node_modules/font-awesome ./dist/font-awesome/",
+    "build:deps:assets": "npm run build:deps:assets:flowbite && npm run build:deps:assets:jquery && npm run build:deps:assets:fontawesome",
     "build:css": "mkdir -p dist && npm run build:deps:assets && npx tailwindcss -c tailwind.config.js -o dist/main.css -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,7 @@
   "description": "",
   "dependencies": {
     "flowbite": "^2.5.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
