@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BildFast - Accelerate Your Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="dark bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+    <!-- Header -->
+    <header class="py-8 px-4 text-center">
+        <img src="img/header-logo-light.png" alt="BildFast Logo" class="mx-auto mb-4 dark:hidden">
+        <img src="img/header-logo-dark.png" alt="BildFast Logo" class="mx-auto mb-4 hidden dark:block">
+        <h1 class="text-4xl font-bold mb-2">Accelerate Your Development with BildStar</h1>
+        <p class="max-w-2xl mx-auto text-lg mb-6">With BildStar, you can launch your project faster and scale with ease. It's your secret weapon to efficient development and standout design.</p>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">Get BildStar Now</button>
+    </header>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Feature Cards -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex-1 text-center">
+                    <img src="img/feature1.png" alt="Feature 1" class="w-full h-48 object-cover rounded mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Efficient Design Workflow</h2>
+                    <p>Save time with ready-made components that streamline your workflow.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex-1 text-center">
+                    <img src="img/feature2.png" alt="Feature 2" class="w-full h-48 object-cover rounded mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Rapid Launch Capabilities</h2>
+                    <p>Quickly deploy your website without the usual friction of development setups.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex-1 text-center">
+                    <img src="img/feature3.png" alt="Feature 3" class="w-full h-48 object-cover rounded mb-4">
+                    <h2 class="text-xl font-semibold mb-2">Universal Integration</h2>
+                    <p>Use BildStar components with popular platforms like WordPress, Figma, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Don't take our word for it. Hear from our partners.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial Cards -->
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-left">
+                    <p class="mb-4">"BildStar has drastically improved our workflow, and we've launched our projects faster than ever."</p>
+                    <div class="flex items-center">
+                        <img src="img/user1.png" alt="User 1" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold">Jane Doe</h3>
+                            <span class="text-sm text-gray-500">CEO, TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-left">
+                    <p class="mb-4">"The integration capabilities BildStar offers are unmatched. It's the perfect tool for our needs."</p>
+                    <div class="flex items-center">
+                        <img src="img/user2.png" alt="User 2" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold">John Smith</h3>
+                            <span class="text-sm text-gray-500">CTO, WebPros</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-left">
+                    <p class="mb-4">"This is the tool we were waiting for. It has saved us countless hours."</p>
+                    <div class="flex items-center">
+                        <img src="img/user3.png" alt="User 3" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold">Emma White</h3>
+                            <span class="text-sm text-gray-500">Product Manager, Innovate Labs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-100 dark:bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Launch Faster?</h2>
+            <p class="text-lg mb-8">Don't let inefficiencies hold you back. Start building with BildStar today.</p>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full">Smash the button and launch fast</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-gray-900 text-white">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 BildFast. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
