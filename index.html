@@ -24,6 +24,26 @@
         .font-fuzzy {
             font-family: 'Fuzzy Bubbles', sans-serif;
         }
+
+        .ticker-wrapper {
+            overflow: hidden;
+        }
+
+        /* Ticker styling */
+        .ticker {
+            animation: marquee 10s linear infinite;
+        }
+
+        /* Infinite scroll animation */
+        @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 
@@ -187,14 +207,12 @@
 
                 </div>
 
-                <!-- Previous Button -->
                 <button onclick="moveSlide(this, -1)"
                     class="absolute right-10 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
                             border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
                     <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <!-- Next Button -->
                 <button onclick="moveSlide(this, 1)"
                     class="absolute right-0 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
                             border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
@@ -425,7 +443,6 @@
             <div class="relative overflow-hidden mx-auto mt-10">
                 <div class="flex space-x-4 transition-transform duration-500 ease-in-out carousel-items pb-[4rem]"
                     role="listbox">
-                    <!-- Carousel Items -->
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-1.png" alt="Portfolio Item 1" class="w-full h-full object-cover">
@@ -482,14 +499,12 @@
                     </div>
                 </div>
 
-                <!-- Previous Button -->
                 <button onclick="moveSlide(this, -1)"
                     class="absolute right-10 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
                                         border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
                     <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <!-- Next Button -->
                 <button onclick="moveSlide(this, 1)"
                     class="absolute right-0 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
                                         border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
@@ -507,25 +522,26 @@
                     Tools
                 </span>
             </div>
-            <div class="flex flex-col md:flex-row lg:flex-row justify-center content-center pt-10 px-5 ">
-                <img src="img/tool-1.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
-                <img src="img/tool-2.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
-                <img src="img/tool-3.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
-                <img src="img/tool-4.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
-                <img src="img/tool-5.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
-                <img src="img/tool-6.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
-                <img src="img/tool-7.png" alt="Logo"
-                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+            <div class="w-full flex justify-center overflow-hidden py-7">
+                <div class="ticker flex space-x-20">
+                    <img src="img/tool-1.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                    <img src="img/tool-2.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                    <img src="img/tool-3.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                    <img src="img/tool-4.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                    <img src="img/tool-5.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                    <img src="img/tool-6.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                    <img src="img/tool-7.png" alt="Logo"
+                        class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                </div>
             </div>
         </div>
     </nav>
-
 
     <nav id="how-it-works" class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
         <div class="max-w-5xl flex-1 justify-center px-5 w-full border rounded-lg border-neutral-900 dark:border-white">
@@ -735,7 +751,6 @@
                         </p>
                     </div>
 
-                    <!-- Testimonial Card 3 -->
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
                         <img src="img/testimonial-avatar-3.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
@@ -748,7 +763,6 @@
                         </p>
                     </div>
 
-                    <!-- Testimonial Card 4 -->
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
                         <img src="img/testimonial-avatar-4.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
@@ -760,7 +774,6 @@
                         </p>
                     </div>
 
-                    <!-- Testimonial Card 5 -->
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
                         <img src="img/testimonial-avatar-5.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
@@ -793,9 +806,7 @@
             </div>
 
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-6">
-                <!-- FAQ Accordion -->
                 <div class="md:col-span-2 space-y-4">
-                    <!-- FAQ Item 1 -->
                     <div class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4
                     rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq1')">
@@ -807,7 +818,7 @@
                             back-end, giving you everything you need to launch your project fast.
                         </div>
                     </div>
-                    <!-- FAQ Item 2 -->
+
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq2')">
@@ -820,7 +831,7 @@
                             needs.
                         </div>
                     </div>
-                    <!-- FAQ Item 3 -->
+
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq3')">
@@ -832,7 +843,7 @@
                             expertise.
                         </div>
                     </div>
-                    <!-- FAQ Item 4 -->
+
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq4')">
@@ -844,7 +855,7 @@
                             Yes, Bildap's features are fully customizable to fit your project's specific requirements.
                         </div>
                     </div>
-                    <!-- FAQ Item 5 -->
+
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq5')">
@@ -858,7 +869,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Book a Call Section -->
+
                 <div
                     class="bg-white text-gray-900 h-60 p-8 rounded-lg shadow-md flex flex-col items-center justify-center">
                     <h3 class="text-xl font-semibold mb-4">Have more questions?</h3>
@@ -872,15 +883,11 @@
 
     <footer class="w-full bg-black text-white dark:bg-white dark:text-gray-900 py-10 mt-20">
         <div class="max-w-7xl p-4 mx-auto flex justify-between items-center">
-            <!-- Logo and Copyright -->
             <div class="flex-1 items-center">
-                <!-- Logo -->
                 <img src="img/light-footer-logo.png" alt="BildFast Logo" class="h-10 dark:hidden">
                 <img src="img/dark-footer-logo.png" alt="BildFast Logo" class="h-10 hidden dark:block">
-                <!-- Copyright -->
                 <p class="text-sm ml-0">&copy; bildap.co 2024. All rights reserved.</p>
             </div>
-            <!-- Social Media Links -->
             <div class="flex space-x-4">
                 <a href="#" class="hover:text-gray-600"><i class="fa-brands fa-x-twitter"></i></a>
                 <a href="#" class="hover:text-gray-600"><i class="fab fa-linkedin"></i></a>
