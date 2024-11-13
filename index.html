@@ -7,13 +7,22 @@
     <title>Bildap - Accelerate Your Development</title>
     <link href="dist/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap">
     <!-- <link rel="stylesheet" href="dist/font-awesome/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="dist/jquery/jquery.slim.js"></script>
     <script src="dist/flowbite/flowbite.min.js"></script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+        }
+
+        .font-fuzzy {
+            font-family: 'Fuzzy Bubbles', sans-serif;
         }
     </style>
 </head>
@@ -22,8 +31,8 @@
     <header class="h-50 sticky top-0 bg-gray-200 dark:bg-black z-30">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="img/header-logo-light.png" alt="BildFast Logo" class="h-10 mx-auto dark:hidden">
-                <img src="img/header-logo-dark.png" alt="BildFast Logo" class="h-10 mx-auto hidden dark:block">
+                <img src="img/light-header-logo.png" alt="BildFast Logo" class="h-10 mx-auto dark:hidden">
+                <img src="img/dark-header-logo.png" alt="BildFast Logo" class="h-10 mx-auto hidden dark:block">
             </a>
             <button data-collapse-toggle="navbar-default" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -38,6 +47,11 @@
             <div class="hidden w-full md:block lg:block md:w-auto" id="navbar-default">
                 <ul
                     class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-black dark:border-gray-200 rounded-lg md:flex-row md:space-x-4 rtl:space-x-reverse md:mt-0 md:border-0">
+                    <li>
+                        <a href="#testimonials" class="block py-2 rounded">
+                            Testimonials
+                        </a>
+                    </li>
                     <li>
                         <a href="#services" class="block py-2 rounded" aria-current="page">
                             Services
@@ -54,19 +68,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#testimonials" class="block py-2 rounded">
-                            Testimonials
-                        </a>
-                    </li>
-                    <li>
                         <a href="#faq" class="block py-2 rounded">
                             FAQ
-                        </a>
-                    </li>
-                    <li class="flex lg:hidden">
-                        <a href="#products"
-                            class="w-full px-4 py-2 bg-white text-black font-bold rounded-lg shadow-md hover:bg-gray-200 border-b-4 border-gray-400">
-                            Get Bildap Now
                         </a>
                     </li>
                 </ul>
@@ -87,19 +90,19 @@
                 <div class="flex-1 ml-2">
                     <div class="text-yellow-400 text-lg">★★★★★</div>
                     <p class="text-sm">
-                        100+ Solo Founders Love Bildap
+                        Founders Love Bildap.co
                     </p>
                 </div>
             </div>
         </div>
         <div class="flex-1 justify-center content-center py-7 px-5">
             <p class="text-2xl md:text-5xl lg:text-6xl font-bold text-center">
-                Accelerate Your<br />Development with Bildap
+                The Launchpad for Your<br />Startup’s Success
             </p>
             <div class="flex justify-center content-center pt-2">
                 <p class="text-xs lg:text-sm text-gray-500 text-center max-w-xl">
-                    Start your project quickly with all-in-one integrations for payments, emails, database, frontend,
-                    and backend—Bildap has everything you need to kickstart your development.
+                    A prepped foundation to build SaaS and online products faster. Integrated APIs, ready-to-use tools,
+                    and more.
                 </p>
             </div>
         </div>
@@ -108,83 +111,95 @@
                 <div class="flex justify-center w-full md:w-2/4 lg:w-1/4">
                     <a href="#products"
                         class="px-4 py-2 w-full text-center bg-white text-black font-bold rounded-lg shadow-md hover:bg-gray-200 border-b-4 border-gray-400">
-                        Get Bildap Now
+                        Start Your Launch
                     </a>
                 </div>
             </div>
             <div class="flex justify-center content-center pt-2">
                 <p class="text-xs lg:text-sm text-gray-500 text-center max-w-xl">
-                    One-time purchase. No recurring fees, just everything you need to launch fast.
+                    Limited-time launch discount and 50% affiliate<br />
+                    program available!
                 </p>
             </div>
         </div>
     </nav>
 
-    <nav id="portfolio" class="carousel-container flex-1 w-full py-10">
+    <nav id="portfolio" class="carousel-container flex-1 w-full py-10 mt-10">
         <div class="max-w-7xl mx-auto px-4 md:mx-auto lg:mx-auto">
-            <div class="flex pt-2 mb-4">
-                <p class="text-xs lg:text-sm text-gray-500">
-                    Recent Work
-                </p>
+            <div class="flex pt-2 mb-4 justify-center">
+                <span
+                    class="px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    Recent Work</span>
             </div>
 
-            <div class="relative overflow-hidden mx-auto">
-                <div class="flex space-x-4 transition-transform duration-500 ease-in-out carousel-items" role="listbox">
+            <div class="relative overflow-x-hidden mx-auto">
+                <div class="flex space-x-4 transition-transform duration-500 ease-in-out carousel-items pb-[4rem]"
+                    role="listbox">
 
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/portfolio-1.png" alt="Portfolio Item 1" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Smart Inventory Management for E-commerce
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+                            Built something amazing with Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/portfolio-2.png" alt="Portfolio Item 2" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            AI-Powered Customer Support Chatbot
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+                            Share it with us, and we’ll feature your work here
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/portfolio-3.png" alt="Portfolio Item 3" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Event Booking and Management System
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+                            Along with a follow link to your project.
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/portfolio-1.png" alt="Portfolio Item 1" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Smart Inventory Management for E-commerce
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+                            Built something amazing with Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/portfolio-2.png" alt="Portfolio Item 2" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            AI-Powered Customer Support Chatbot
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+                            Share it with us, and we’ll feature your work here
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/portfolio-3.png" alt="Portfolio Item 3" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Event Booking and Management System
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+                            Along with a follow link to your project.
                         </div>
                     </div>
 
                 </div>
+
+                <!-- Previous Button -->
                 <button onclick="moveSlide(this, -1)"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 text-2xl bg-gray-200 dark:bg-gray-700 rounded-full p-2 shadow-md">❮</button>
+                    class="absolute right-10 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
+                            border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Next Button -->
                 <button onclick="moveSlide(this, 1)"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl bg-gray-200 dark:bg-gray-700 rounded-full p-2 shadow-md">❯</button>
+                    class="absolute right-0 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
+                            border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -192,43 +207,46 @@
     <div class="max-w-7xl mx-auto mt-5">
         <nav class="flex-1 w-full">
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
-                    You don’t have a time problem...<br />
-                    You have an efficiency problem.
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
+                    Why Choose Bildap.co?
                 </p>
                 <div class="flex justify-center content-center pt-2">
                     <p class="text-xs lg:text-sm text-gray-500 text-center max-w-xl">
-                        The real challenge is not about working more, it’s about <br />launching faster and smarter.
+                        Built to save you time and power your startup’s growth from day one.
                     </p>
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row lg:flex-row justify-center content-center pt-10 px-5 ">
+            <div
+                class="flex flex-col md:flex-row lg:flex-row -space-y-10 md:space-y-0 justify-center content-center pt-10 px-5 ">
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
                     <div class="mb-5">
-                        <img src="img/value-prop-1.png" alt="Value Proposition" class="h-[65px] mx-auto">
+                        <span class="text-6xl"><i class="far fa-clock"></i></span>
                     </div>
-                    <div class="text-md font-bold text-center mb-5">Development Delays</div>
+                    <div class="text-md font-bold text-center mb-2">Save Months of <br />Development Time</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
-                        Hours spent integrating multiple services and tools slow down your project’s progress.
+                        With a fully prepped base, integrated APIs, and ready-to-use tools, Bildap.co helps you skip the
+                        setup hassle and start building immediately.
                     </div>
                 </div>
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
                     <div class="mb-5">
-                        <img src="img/value-prop-2.png" alt="Value Proposition" class="h-[65px] mx-auto">
+                        <span class="text-6xl"><i class="fas fa-box-open"></i></span>
                     </div>
-                    <div class="text-md font-bold text-center mb-5">Tool Overload</div>
+                    <div class="text-md font-bold text-center mb-2">Fully Customizable for Your<br />Needs</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
-                        No more searching for the right tools—get started immediately and launch in record time.
+                        Easily configure Stripe payments, email, and login features. Adapt Bildap.co’s foundation to fit
+                        your project’s specific requirements.
                     </div>
                 </div>
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
                     <div class="mb-5">
-                        <img src="img/value-prop-3.png" alt="Value Proposition" class="h-[65px] mx-auto">
+                        <span class="text-6xl"><i class="far fa-money-bill-alt"></i></span>
                     </div>
-                    <div class="text-md font-bold text-center mb-5">Costly Solutions</div>
+                    <div class="text-md font-bold text-center mb-2">One-Time Payment,<br />Lifetime Value</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
-                        A one-time purchase that scales with your business without the need for costly monthly services.
+                        No subscriptions or extra costs—use Bildap.co across projects with full access to future updates
+                        for a one-time fee.
                     </div>
                 </div>
             </div>
@@ -236,92 +254,116 @@
     </div>
 
     <nav class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
-        <div class="max-w-6xl flex-1 justify-center px-5 w-full border rounded-lg">
+        <div class="max-w-5xl flex-1 justify-center px-5 w-full border rounded-lg border-neutral-900 dark:border-white">
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
-                    Save Time and Launch Fast <br />with Bildap
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
+                    Save Time and Launch Fast <br />with Bildap.co
                 </p>
                 <div class="flex justify-center content-center pt-2">
                     <p class="text-xs lg:text-sm text-gray-500 text-center max-w-xl">
-                        Bildap provides a fast, all-in-one integration kit so you can focus<br />
-                        on what truly matters—building and growing your product
+                        Bildap.co provides a fast, all-in-one integration kit so you can focus on what truly
+                        matters—building and growing your product.
                     </p>
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row lg:flex-row justify-center content-center pt-10 px-5 ">
-
+            <div
+                class="flex flex-col md:flex-row lg:flex-row -space-y-10 md:space-y-0 justify-center content-center pt-10 px-5 ">
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
                     <div class="mb-5">
-                        <img src="img/value-prop-4.png" alt="Value Proposition" class="h-[65px] mx-auto">
+                        <span class="text-6xl"><i class="fas fa-link"></i></span>
                     </div>
-                    <div class="text-md font-bold text-center mb-5">Unified System</div>
+                    <div class="text-md font-bold text-center mb-2">Unified System</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
                         Payments, emails, databases, frontend, and backend—everything is pre-built and ready to go.
                     </div>
                 </div>
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
                     <div class="mb-5">
-                        <img src="img/value-prop-5.png" alt="Value Proposition" class="h-[65px] mx-auto">
+                        <span class="text-6xl"><i class="fas fa-rocket"></i></span>
                     </div>
-                    <div class="text-md font-bold text-center mb-5">Speed to Launch</div>
+                    <div class="text-md font-bold text-center mb-2">Speed to Launch</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
                         No more searching for the right tools—get started immediately and launch in record time.
                     </div>
                 </div>
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
                     <div class="mb-5">
-                        <img src="img/value-prop-6.png" alt="Value Proposition" class="h-[65px] mx-auto">
+                        <span class="text-6xl"><i class="fas fa-arrow-trend-up"></i></span>
                     </div>
-                    <div class="text-md font-bold text-center mb-5">Affordable Growth</div>
+                    <div class="text-md font-bold text-center mb-2">Affordable Growth</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
                         A one-time purchase that scales with your business without the need for costly monthly services.
                     </div>
                 </div>
-
             </div>
         </div>
     </nav>
 
-    <nav class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
-        <div class="max-w-7xl flex-1 justify-center px-5 w-full">
+    <nav id="testimonials" class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
+        <div class="max-w-7xl flex-1 justify-center w-full">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    Testimonials
+                </span>
+            </div>
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
-                    Don’t take our word for it. Hear from<br />our partners.
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
+                    Share Your Testimonial to Be Featured!
                 </p>
             </div>
 
-            <div class="flex flex-col md:flex-row lg:flex-row pt-10 px-5 space-y-5 md:space-y-0 md:space-x-5">
-                <div
-                    class="flex-1 items-center text-center border rounded-lg w-full md:w-[430px] h-[550px] overflow-hidden relative">
-                    <img src="img/testimonial-1.png" alt="Value Proposition" class="w-full h-full object-cover">
+            <div class="flex flex-col md:flex-row lg:flex-row pt-10 md:px-5 space-y-5 md:space-y-0 md:space-x-5">
+                <a href="#">
+                    <div
+                        class="flex-1 items-center text-center border rounded-lg w-full md:w-[430px] h-[550px] overflow-hidden relative">
+                        <img src="img/testimonial-1.png" alt="Value Proposition" class="w-full h-full object-cover">
 
-                    <div class="absolute bottom-0 right-0 left-0 pb-5 pl-5 flex-1 text-left text-white">
-                        <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
-                        <p class="text-sm md:text-lg lg:text-lg">Harsh Patel</p>
-                        <p class="text-xs">Founder at Macro</p>
-                    </div>
-                </div>
-                <div
-                    class="flex-1 items-center text-center border rounded-lg w-full md:w-[430px] h-[550px] overflow-hidden relative">
-                    <img src="img/testimonial-2.png" alt="Value Proposition" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 right-0 left-0 pb-5 px-5 flex-1 text-left text-white">
+                            <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+                            <p class="text-sm md:text-lg lg:text-lg">Want to Be Featured Here?</p>
+                            <p class="text-xs truncate">Post a video on X and tag @bildapco!</p>
+                        </div>
 
-                    <div class="absolute bottom-0 right-0 left-0 pb-5 pl-5 flex-1 text-left text-white">
-                        <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
-                        <p class="text-sm md:text-lg lg:text-lg">Elena Rivera</p>
-                        <p class="text-xs">CTO at Quantum Tech</p>
+                        <div class="absolute bottom-10 right-6">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="flex-1 items-center text-center border rounded-lg w-full md:w-[430px] h-[550px] overflow-hidden relative">
-                    <img src="img/testimonial-3.png" alt="Value Proposition" class="w-full h-full object-cover">
+                </a>
+                <a href="#">
+                    <div
+                        class="flex-1 items-center text-center border rounded-lg w-full md:w-[430px] h-[550px] overflow-hidden relative">
+                        <img src="img/testimonial-2.png" alt="Value Proposition" class="w-full h-full object-cover">
 
-                    <div class="absolute bottom-0 right-0 left-0 pb-5 pl-5 flex-1 text-left text-white">
-                        <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
-                        <p class="text-sm md:text-lg lg:text-lg">Liam Nguyen</p>
-                        <p class="text-xs">Lead Developer at Phoenix Systems</p>
+                        <div class="absolute bottom-0 right-0 left-0 pb-5 px-5 flex-1 text-left text-white">
+                            <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+                            <p class="text-sm md:text-lg lg:text-lg">Your Spot Awaits!</p>
+                            <p class="text-xs truncate">Share your video and mention @bildapco on X.</p>
+                        </div>
+
+                        <div class="absolute bottom-10 right-6">
+                            <i class="fas fa-play"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
+                <a href="#">
+                    <div
+                        class="flex-1 items-center text-center border rounded-lg w-full md:w-[430px] h-[550px] overflow-hidden relative">
+                        <img src="img/testimonial-3.png" alt="Value Proposition" class="w-full h-full object-cover">
+
+                        <div class="absolute bottom-0 right-0 left-0 pb-5 px-5 flex-1 text-left text-white">
+                            <div class="text-yellow-400 text-lg mb-2">★★★★★</div>
+                            <p class="text-sm md:text-lg lg:text-lg">Show Off Your Success Story!</p>
+                            <p class="text-xs truncate">Post a video on X with @bildapco for a chance to be featured.
+                            </p>
+                        </div>
+
+                        <div class="absolute bottom-10 right-6">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="mt-20 text-center">
                 <a href="#"
@@ -334,31 +376,46 @@
 
     <nav id="services" class="carousel-container flex-1 w-full py-10 mt-10">
         <div class="max-w-7xl mx-auto px-4 md:mx-auto lg:mx-auto">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    Services
+                </span>
+            </div>
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
                     What Bildap Offers.
                 </p>
                 <div class="flex justify-center flex-wrap gap-4 mt-10">
                     <div class="flex flex-wrap justify-center gap-4">
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">API
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">API
                             Integration</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Payment
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Payment
                             Gateways</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Database
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Database
                             Solutions</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Frontend
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Frontend
                             Frameworks</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Backend
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Backend
                             APIs</span>
                     </div>
                     <div class="flex flex-wrap justify-center gap-4">
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Email
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Email
                             Automation</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">UI
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">UI
                             Components</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Scalable
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Scalable
                             Infrastructure</span>
-                        <span class="px-4 py-2 border border-white rounded-full text-white text-sm font-medium">Security
+                        <span
+                            class="px-4 py-2 border border-black dark:border-white rounded-xl text-black dark:text-white text-sm font-medium">Security
                             Integrations</span>
                     </div>
                 </div>
@@ -366,124 +423,175 @@
 
 
             <div class="relative overflow-hidden mx-auto mt-10">
-                <div class="flex space-x-4 transition-transform duration-500 ease-in-out carousel-items" role="listbox">
+                <div class="flex space-x-4 transition-transform duration-500 ease-in-out carousel-items pb-[4rem]"
+                    role="listbox">
                     <!-- Carousel Items -->
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-1.png" alt="Portfolio Item 1" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Global Payment Solutions for Startups
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+
+                            Discover More Creations Built with Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-2.png" alt="Portfolio Item 2" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            All-in-One CRM for Product Launches
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+
+                            See What Others Have Built with Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-3.png" alt="Portfolio Item 3" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Investment Dashboards for Founders
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+
+                            Showcase: Products Launched Using Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-1.png" alt="Portfolio Item 1" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Global Payment Solutions for Startups
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+
+                            Discover More Creations Built with Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-2.png" alt="Portfolio Item 2" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            All-in-One CRM for Product Launches
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+
+                            See What Others Have Built with Bildap.co
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="w-[350px] h-[350px] overflow-hidden">
                             <img src="img/services-3.png" alt="Portfolio Item 3" class="w-full h-full object-cover">
                         </div>
-                        <div class="text-xs lg:text-sm text-gray-500 mt-2">
-                            Investment Dashboards for Founders
+                        <div class="font-fuzzy text-xs lg:text-[0.7rem] text-gray-500 mt-2">
+
+                            Showcase: Products Launched Using Bildap.co
                         </div>
                     </div>
                 </div>
+
+                <!-- Previous Button -->
                 <button onclick="moveSlide(this, -1)"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 text-2xl bg-gray-200 dark:bg-gray-700 rounded-full p-2 shadow-md">❮</button>
+                    class="absolute right-10 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
+                                        border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- Next Button -->
                 <button onclick="moveSlide(this, 1)"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 text-2xl bg-gray-200 dark:bg-gray-700 rounded-full p-2 shadow-md">❯</button>
+                    class="absolute right-0 bottom-0 -translate-y-1/2 text-md rounded-xl px-3 py-1 border
+                                        border-neutral-400 text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-900 shadow-lg transition">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <nav class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
+    <nav id="tools" class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
         <div class="max-w-7xl flex-1 justify-center px-5 w-full">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    Tools
+                </span>
+            </div>
             <div class="flex flex-col md:flex-row lg:flex-row justify-center content-center pt-10 px-5 ">
-                <img src="img/tools-1.png" alt="Tool" class="h-[25px] mx-auto mb-10 md:mb-0">
-                <img src="img/tools-2.png" alt="Tool" class="h-[25px] mx-auto mb-10 md:mb-0">
-                <img src="img/tools-3.png" alt="Tool" class="h-[25px] mx-auto mb-10 md:mb-0">
-                <img src="img/tools-4.png" alt="Tool" class="h-[25px] mx-auto mb-10 md:mb-0">
-                <img src="img/tools-5.png" alt="Tool" class="h-[25px] mx-auto mb-10 md:mb-0">
+                <img src="img/tool-1.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                <img src="img/tool-2.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                <img src="img/tool-3.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                <img src="img/tool-4.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                <img src="img/tool-5.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                <img src="img/tool-6.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
+                <img src="img/tool-7.png" alt="Logo"
+                    class="h-[25px] mx-auto mb-10 md:mb-0 dark:block invert dark:invert-0">
             </div>
         </div>
     </nav>
 
 
-    <nav class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
-        <div class="max-w-6xl flex-1 justify-center px-5 w-full border rounded-lg">
-            <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
-                    How Bildap Works: Launch<br />
-                    Your Project in 3 Simple Steps
+    <nav id="how-it-works" class="flex w-full justify-center mt-20 px-5 md:px-0 lg:px-0">
+        <div class="max-w-5xl flex-1 justify-center px-5 w-full border rounded-lg border-neutral-900 dark:border-white">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="mt-10 px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    How it works
+                </span>
+            </div>
+            <div class="flex-1 justify-center content-center pt-7 px-5">
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
+                    Launching your startup has<br />
+                    never been easier. Follow these<br />
+                    simple steps to get started!
                 </p>
             </div>
 
-            <div class="flex flex-col md:flex-row lg:flex-row justify-center content-center pt-10 px-5 ">
+            <div
+                class="flex flex-col md:flex-row lg:flex-row -space-y-10 md:space-y-0 justify-center content-center px-5 ">
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
-                    <div class="mb-5">
-                        <img src="img/launch-step-1.png" alt="Value Proposition" class="h-[100px] mx-auto">
+                    <div
+                        class="-mb-10 text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-500/70 dark:from-gray-800 dark:to-gray-900/70">
+                        1
                     </div>
-                    <div class="text-xl font-bold text-center mb-5">Select Your Project Needs</div>
+                    <div class="text-xl font-bold text-center mb-5">Select Your base</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
-                        Choose the tools and integrations you need for payments, emails, database, and more—all in one
-                        place.
+                        Start with our pre-built foundation, featuring Stripe and AhaSend integrations ready to go. Just
+                        add your API keys and you’re set!.
                     </div>
                 </div>
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
-                    <div class="mb-5">
-                        <img src="img/launch-step-2.png" alt="Value Proposition" class="h-[100px] mx-auto">
+                    <div
+                        class="-mb-10 text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-500/70 dark:from-gray-800 dark:to-gray-900/70">
+                        2
                     </div>
-                    <div class="text-xl font-bold text-center mb-5">Configure and Customize</div>
+                    <div class="text-xl font-bold text-center mb-5">Customize to Your Needs</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
-                        Easily adjust and set up each feature to match your project’s specific requirements.
+                        Adjust the admin panel, API integrations, and login settings to match your brand and project
+                        requirements.
                     </div>
                 </div>
                 <div class="flex-1 items-center text-center p-10 lg:w-1/3">
-                    <div class="mb-5">
-                        <img src="img/launch-step-3.png" alt="Value Proposition" class="h-[100px] mx-auto">
+                    <div
+                        class="-mb-10 text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-gray-300 to-gray-500/70 dark:from-gray-800 dark:to-gray-900/70">
+                        3
                     </div>
-                    <div class="text-xl font-bold text-center mb-5">Launch with Confidence</div>
+                    <div class="text-xl font-bold text-center mb-5">Launch and Grow</div>
                     <div class="text-xs lg:text-sm text-gray-500 text-center max-w-xl mx-auto">
-                        Deploy your project quickly, with everything ready to go for a smooth and fast launch.
+                        Go live with confidence. Our SEO-ready, scalable platform lets you focus on growth, with future
+                        updates included.
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <nav class="flex w-full justify-center mt-20 px-5 md:px-20 lg:px-20">
-        <div class="max-w-5xl flex-1 justify-center px-5 w-full border-0 rounded-lg bg-gray-400 dark:bg-neutral-900">
+    <nav id="pricing" class="flex w-full justify-center mt-20 px-5 md:px-20 lg:px-20">
+        <div class="max-w-3xl flex-1 justify-center px-5 w-full border-0 rounded-lg bg-gray-400 dark:bg-neutral-900">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="mt-10 px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    Pricing
+                </span>
+            </div>
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
                     Ready to Launch Faster?
                 </p>
             </div>
@@ -494,34 +602,62 @@
                         One-off
                     </div>
                     <p class="line-through text-gray-500 text-lg">$150</p>
-                    <p class="text-4xl font-bold text-black">$70</p>
-                    <p class="text-gray-600 mt-3">
-                        Perfect for single, high-impact projects where you need all integrations set up quickly without
-                        recurring costs.
+                    <p class="text-4xl font-bold text-black">$30</p>
+
+                    <p class="text-gray-600 h-28 mt-3">
+                        Get full access to Bildap for a fraction of the price! This exclusive $30 offer is available
+                        only to the first 100 users—act fast!
                     </p>
                     <button class="mt-5 bg-neutral-900 text-white w-full py-3 rounded-lg font-medium">
-                        Get Bildap for $300
+                        Get Started for $30
                     </button>
                     <div class="mt-6 text-black">
                         <h3 class="font-bold mb-2">Features:</h3>
                         <ul class="text-gray-600">
                             <li class="flex items-center mb-1">
-                                <span class="text-green-600 mr-2">✓</span> Full payment gateway integration
+                                <span class="text-green-600 mr-2">✓</span> Node.js and Express.js Backend
                             </li>
                             <li class="flex items-center mb-1">
-                                <span class="text-green-600 mr-2">✓</span> Email automation setup
+                                <span class="text-green-600 mr-2">✓</span> React.js Frontend
                             </li>
                             <li class="flex items-center mb-1">
-                                <span class="text-green-600 mr-2">✓</span> Backend and frontend setup
+                                <span class="text-green-600 mr-2">✓</span> Next.js Server-Side Rendering
                             </li>
                             <li class="flex items-center mb-1">
-                                <span class="text-green-600 mr-2">✓</span> Database configuration
+                                <span class="text-green-600 mr-2">✓</span> Tailwind CSS Styling
                             </li>
                             <li class="flex items-center mb-1">
-                                <span class="text-green-600 mr-2">✓</span> Complete launch kit
+                                <span class="text-green-600 mr-2">✓</span> NextAuth.js for Authentication
                             </li>
                             <li class="flex items-center mb-1">
-                                <span class="text-green-600 mr-2">✓</span> Lifetime updates
+                                <span class="text-green-600 mr-2">✓</span> Prisma ORM Database Integration
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> Stripe API Payment Integration
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> AhaSend Transactional Email Service
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> Google Login and Registration
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> Admin Panel
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> API Integration Wizard
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> SEO Optimization Ready
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> Fully Scalable Platform
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> One-Time Payment Access
+                            </li>
+                            <li class="flex items-center mb-1">
+                                <span class="text-green-600 mr-2">✓</span> Unlimited Project Use
                             </li>
                         </ul>
                     </div>
@@ -529,35 +665,26 @@
 
                 <div class="bg-neutral-800 rounded-lg shadow-lg p-6 w-full max-w-sm text-white">
                     <div class="bg-neutral-700 inline-block px-3 py-1 rounded-full text-white text-xs font-bold mb-3">
-                        Monthly Subscription
+                        One-off
                     </div>
-                    <p class="text-4xl font-bold">$30<span class="text-xl font-normal">/month</span></p>
-                    <p class="text-gray-300 mt-3">
-                        Ideal for ongoing projects that need consistent updates, support, and scalability.
+                    <p class="line-through text-neutral-400 text-lg">$150</p>
+                    <p class="text-4xl font-bold">$30</p>
+
+                    <p class="text-gray-300 h-28 mt-3">
+                        All features from the base plan, plus dedicated support and guidance to get you up and running
+                        smoothly.
                     </p>
                     <button class="mt-5 bg-white text-neutral-900 w-full py-3 rounded-lg font-medium">
-                        Subscribe for $30/month
+                        Get Started with Full Support
                     </button>
                     <div class="mt-6">
                         <h3 class="font-bold mb-2">Features:</h3>
                         <ul class="text-gray-300">
                             <li class="flex items-center mb-1">
-                                <span class="text-green-400 mr-2">✓</span> All integrations included
-                            </li>
-                            <li class="flex items-center mb-1">
-                                <span class="text-green-400 mr-2">✓</span> Priority support
-                            </li>
-                            <li class="flex items-center mb-1">
-                                <span class="text-green-400 mr-2">✓</span> Monthly feature updates
-                            </li>
-                            <li class="flex items-center mb-1">
-                                <span class="text-green-400 mr-2">✓</span> Continuous scaling options
-                            </li>
-                            <li class="flex items-center mb-1">
-                                <span class="text-green-400 mr-2">✓</span> Flexibility for growing projects
-                            </li>
-                            <li class="flex items-center mb-1">
-                                <span class="text-green-400 mr-2">✓</span> Easy cancellation anytime
+                                <span class="text-green-400 mr-2">✓</span> All features from the base plan, with
+                                added support and guidance for
+                                non-developers. Developers, check out
+                                the base plan.
                             </li>
                         </ul>
                     </div>
@@ -566,99 +693,116 @@
         </div>
     </nav>
 
-    <nav class="flex w-full justify-center mt-20 px-5 md:px-20 lg:px-20">
+    <nav class="flex w-full justify-center mt-20 md:px-20 lg:px-20">
         <div class="max-w-7xl flex-1 justify-center px-5 w-full border-0 rounded-lg">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="mt-10 px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    Testimonials
+                </span>
+            </div>
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
                     Don’t Just Take Our Word for It. Here’s <br />
                     What Our Partners Are Saying.
                 </p>
             </div>
 
             <div class="flex flex-col md:flex-row justify-center gap-8 py-10 md:px-5 lg:px-5 ">
-                <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
-                        <img src="img/testimonial-avatar-1.png" alt="Sophia Adams" class="w-12 h-12 rounded-full mb-4">
-                        <h3 class="text-xl font-semibold">Sophia Adams</h3>
-                        <p class="text-gray-400 text-sm mb-4">Lead Developer at WebCrafters</p>
+                        <img src="img/testimonial-avatar-1.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
+                        <h3 class="text-xl font-semibold">James Smith</h3>
+                        <p class="dark:text-gray-400text-gray-400 text-sm">CEO</p>
                         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
-                        <p class="italic">"With Bildap, we cut our launch time in half. The pre-built integrations
-                            saved us from countless hours of custom development. Highly recommend for any serious
-                            developer."</p>
+                        <p class="italic">
+                            Love your new setup with Bildap? Post a review on X, mention @bildapco, and we’ll link to
+                            your post here!
+                        </p>
                     </div>
 
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
-                        <img src="img/testimonial-avatar-2.png" alt="Liam Porter" class="w-12 h-12 rounded-full mb-4">
-                        <h3 class="text-xl font-semibold">Liam Porter</h3>
-                        <p class="text-gray-400 text-sm mb-4">CTO at InnovateX</p>
+                        <img src="img/testimonial-avatar-2.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
+                        <h3 class="text-xl font-semibold">Michael Brown</h3>
+                        <p class="dark:text-gray-400text-gray-400 text-sm">CTO</p>
                         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
-                        <p class="italic">"Our team was able to focus on the core features of our product, while
-                            Bildap handled all the backend and payment integration effortlessly. It's a lifesaver."
+                        <p class="italic">
+                            Share your thoughts on X after buying Bildap! Mention @bildapco, and you could be featured
+                            here with a link to your review.
                         </p>
                     </div>
 
                     <!-- Testimonial Card 3 -->
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
-                        <img src="img/testimonial-avatar-3.png" alt="Elena Rivera" class="w-12 h-12 rounded-full mb-4">
-                        <h3 class="text-xl font-semibold">Elena Rivera</h3>
-                        <p class="text-gray-400 text-sm mb-4">Founder at Quantum Solutions</p>
+                        <img src="img/testimonial-avatar-3.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
+                        <h3 class="text-xl font-semibold">Emily Davis</h3>
+                        <p class="dark:text-gray-400text-gray-400 text-sm">Founder</p>
                         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
-                        <p class="italic">"We scaled our platform without a hitch using Bildap. The all-in-one
-                            solution made everything from frontend to backend smooth and seamless. Our clients love the
-                            speed and performance."</p>
+                        <p class="italic">
+                            Bought our product? Share your experience on X and tag @bildapco for a chance to be featured
+                            here, with a link to your post!
+                        </p>
                     </div>
 
                     <!-- Testimonial Card 4 -->
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
-                        <img src="img/testimonial-avatar-4.png" alt="Eben Pingree" class="w-12 h-12 rounded-full mb-4">
-                        <h3 class="text-xl font-semibold">Eben Pingree</h3>
-                        <p class="text-gray-400 text-sm mb-4">Cofounder at Madston</p>
+                        <img src="img/testimonial-avatar-4.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
+                        <h3 class="text-xl font-semibold">John Johnson</h3>
+                        <p class="dark:text-gray-400text-gray-400 text-sm">CEO</p>
                         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
-                        <p class="italic">"Bildap exceeded our expectations by streamlining our entire development
-                            process. What used to take weeks, now takes days. The ease of use and flexibility are
-                            game-changers."</p>
+                        <p class="italic">
+                            Do you see this landing page? This is what you get when you buy this product.
+                        </p>
                     </div>
 
                     <!-- Testimonial Card 5 -->
                     <div
                         class="bg-gray-400 dark:bg-neutral-900 p-6 rounded-lg shadow-md transform transition-transform hover:scale-105">
-                        <img src="img/testimonial-avatar-5.png" alt="Harsh Patel" class="w-12 h-12 rounded-full mb-4">
-                        <h3 class="text-xl font-semibold">Harsh Patel</h3>
-                        <p class="text-gray-400 text-sm mb-4">Founder at Macro</p>
+                        <img src="img/testimonial-avatar-5.png" alt="avatar" class="w-12 h-12 rounded-full mb-4">
+                        <h3 class="text-xl font-semibold">Sarah Wilson</h3>
+                        <p class="dark:text-gray-400text-gray-400 text-sm">Co-Founder</p>
                         <div class="text-yellow-400 text-lg mb-4">★★★★★</div>
-                        <p class="italic">"Bildap gave us everything we needed in one package. No more bouncing
-                            between different tools and services. It’s fast, reliable, and worth every penny."</p>
+                        <p class="italic">
+                            Enjoying Bildap? Write a review and tag us on X @bildapco—we’ll feature your feedback here
+                            with a link to your post!
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <nav class="flex w-full justify-center mt-20 px-5 md:px-20 lg:px-20">
-        <div class="max-w-7xl flex-1 justify-center px-5 w-full border-0 rounded-lg">
+    <nav id="faq" class="flex w-full justify-center mt-20 px-5 md:px-20 lg:px-20">
+        <div class="max-w-7xl flex-1 justify-center w-full border-0 rounded-lg">
+            <div class="flex pt-2 justify-center">
+                <span
+                    class="mt-10 px-2 py-1 border border-neutral-800 bg-neutral-800 text-white dark:border-neutral-800 dark:bg-neutral-800 dark:text-white rounded-full text-[0.6rem]">
+                    FAQs
+                </span>
+            </div>
             <div class="flex-1 justify-center content-center py-7 px-5">
-                <p class="text-1xl md:text-3xl lg:text-4xl font-bold text-center">
+                <p class="text-3xl md:text-3xl lg:text-4xl font-bold text-center">
                     Questions?<br />
                     We’ve Got Answers.
                 </p>
             </div>
 
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-6">
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-6">
                 <!-- FAQ Accordion -->
                 <div class="md:col-span-2 space-y-4">
                     <!-- FAQ Item 1 -->
-                    <div
-                        class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
+                    <div class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4
+                    rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq1')">
-                            <h3 class="font-semibold text-lg">What does the Bildap kit include?</h3>
+                            <h3 class="font-semibold text-lg text-left">What does the Bildap kit include?</h3>
                             <span id="icon-faq1" class="text-2xl">-</span>
                         </button>
-                        <div id="faq1" class="mt-4 text-sm">
+                        <div id="faq1" class="mt-4 text-sm text-left">
                             Bildap includes pre-built integrations for payments, emails, databases, front-end, and
                             back-end, giving you everything you need to launch your project fast.
                         </div>
@@ -667,10 +811,11 @@
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq2')">
-                            <h3 class="font-semibold text-lg">Is Bildap a one-time purchase or a subscription?</h3>
+                            <h3 class="font-semibold text-lg text-left">Is Bildap a one-time purchase or a subscription?
+                            </h3>
                             <span id="icon-faq2" class="text-2xl">+</span>
                         </button>
-                        <div id="faq2" class="hidden mt-4 text-sm">
+                        <div id="faq2" class="hidden mt-4 text-sm text-left">
                             Bildap is available both as a one-time purchase or as a subscription, depending on your
                             needs.
                         </div>
@@ -679,10 +824,10 @@
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq3')">
-                            <h3 class="font-semibold text-lg">Do I need to be a developer to use Bildap?</h3>
+                            <h3 class="font-semibold text-lg text-left">Do I need to be a developer to use Bildap?</h3>
                             <span id="icon-faq3" class="text-2xl">+</span>
                         </button>
-                        <div id="faq3" class="hidden mt-4 text-sm">
+                        <div id="faq3" class="hidden mt-4 text-sm text-left">
                             No, Bildap is designed to be user-friendly for everyone, regardless of your technical
                             expertise.
                         </div>
@@ -691,10 +836,11 @@
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq4')">
-                            <h3 class="font-semibold text-lg">Can I customize the features included in Bildap?</h3>
+                            <h3 class="font-semibold text-lg text-left">Can I customize the features included in Bildap?
+                            </h3>
                             <span id="icon-faq4" class="text-2xl">+</span>
                         </button>
-                        <div id="faq4" class="hidden mt-4 text-sm">
+                        <div id="faq4" class="hidden mt-4 text-sm text-left">
                             Yes, Bildap's features are fully customizable to fit your project's specific requirements.
                         </div>
                     </div>
@@ -702,10 +848,11 @@
                     <div
                         class="border border-neutral-700 hover:bg-gray-400 dark:hover:bg-neutral-900 border-b-4 p-4 rounded-lg shadow-md">
                         <button class="flex justify-between items-center w-full" onclick="toggleContent('faq5')">
-                            <h3 class="font-semibold text-lg">How fast can I launch my project with Bildap?</h3>
+                            <h3 class="font-semibold text-lg text-left">How fast can I launch my project with Bildap?
+                            </h3>
                             <span id="icon-faq5" class="text-2xl">+</span>
                         </button>
-                        <div id="faq5" class="hidden mt-4 text-sm">
+                        <div id="faq5" class="hidden mt-4 text-sm text-left">
                             Bildap helps you launch your project in days, not weeks, thanks to its pre-built
                             integrations and easy setup.
                         </div>
@@ -728,8 +875,8 @@
             <!-- Logo and Copyright -->
             <div class="flex-1 items-center">
                 <!-- Logo -->
-                <img src="img/footer-logo-light.png" alt="BildFast Logo" class="h-10 dark:hidden">
-                <img src="img/footer-logo-dark.png" alt="BildFast Logo" class="h-10 hidden dark:block">
+                <img src="img/light-footer-logo.png" alt="BildFast Logo" class="h-10 dark:hidden">
+                <img src="img/dark-footer-logo.png" alt="BildFast Logo" class="h-10 hidden dark:block">
                 <!-- Copyright -->
                 <p class="text-sm ml-0">&copy; bildap.co 2024. All rights reserved.</p>
             </div>
@@ -746,6 +893,21 @@
         function toggleContent(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById('icon-' + id);
+            const allContents = document.querySelectorAll('[id^="faq"]');
+            const allIcons = document.querySelectorAll('[id^="icon-faq"]');
+
+            allContents.forEach((item) => {
+                if (item.id !== id) {
+                    item.classList.add('hidden');
+                }
+            });
+
+            allIcons.forEach((item) => {
+                if (item.id !== 'icon-' + id) {
+                    item.innerText = '+';
+                }
+            });
+
             if (content.classList.contains('hidden')) {
                 content.classList.remove('hidden');
                 icon.innerText = '-';
